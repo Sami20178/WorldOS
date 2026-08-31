@@ -1,0 +1,3 @@
+const grid=document.getElementById('grid');const panel=document.getElementById('panel');
+WORLD_OS.apps.forEach(app=>{const b=document.createElement('button');b.className='app';b.innerHTML=`<span class="icon">${app.icon}</span>${app.name}`;b.onclick=()=>{panel.classList.remove('hidden');panel.innerHTML=`<button onclick="panel.classList.add('hidden')">← Back</button><h2>${app.icon} ${app.name}</h2><p>${app.name} is part of World OS.</p>`};grid.appendChild(b)});
+function updateTime(){document.getElementById('time').textContent=new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}updateTime();setInterval(updateTime,1000);document.getElementById('menuButton').onclick=()=>panel.classList.toggle('hidden');
